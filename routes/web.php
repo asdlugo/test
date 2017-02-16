@@ -129,3 +129,43 @@ Route::group(['middleware'=> 'web'],function(){
   Route::get('type_document_earth/{id}/delete','\App\Http\Controllers\Type_document_earthController@destroy');
   Route::get('type_document_earth/{id}/deleteMsg','\App\Http\Controllers\Type_document_earthController@DeleteMsg');
 });
+
+//production_unit Routes
+Route::group(['middleware'=> 'web'],function(){
+  Route::resource('production_unit','\App\Http\Controllers\Production_unitController');
+  Route::post('production_unit/{id}/update','\App\Http\Controllers\Production_unitController@update');
+  Route::get('production_unit/{id}/delete','\App\Http\Controllers\Production_unitController@destroy');
+  Route::get('production_unit/{id}/deleteMsg','\App\Http\Controllers\Production_unitController@DeleteMsg');
+});
+
+//indigenous_person Routes
+Route::group(['middleware'=> 'web'],function(){
+  Route::resource('indigenous_person','\App\Http\Controllers\Indigenous_personController');
+  Route::post('indigenous_person/{id}/update','\App\Http\Controllers\Indigenous_personController@update');
+  Route::get('indigenous_person/{id}/delete','\App\Http\Controllers\Indigenous_personController@destroy');
+  Route::get('indigenous_person/{id}/deleteMsg','\App\Http\Controllers\Indigenous_personController@DeleteMsg');
+});
+
+//popular_organization Routes
+Route::group(['middleware'=> 'web'],function(){
+  Route::resource('popular_organization','\App\Http\Controllers\Popular_organizationController');
+  Route::post('popular_organization/{id}/update','\App\Http\Controllers\Popular_organizationController@update');
+  Route::get('popular_organization/{id}/delete','\App\Http\Controllers\Popular_organizationController@destroy');
+  Route::get('popular_organization/{id}/deleteMsg','\App\Http\Controllers\Popular_organizationController@DeleteMsg');
+});
+
+//appointment Routes
+Route::group(['middleware'=> 'web'],function(){
+  Route::resource('appointment','\App\Http\Controllers\AppointmentController');
+  Route::post('appointment/{id}/update','\App\Http\Controllers\AppointmentController@update');
+  Route::get('appointment/{id}/delete','\App\Http\Controllers\AppointmentController@destroy');
+  Route::get('appointment/{id}/deleteMsg','\App\Http\Controllers\AppointmentController@DeleteMsg');
+});
+
+//person_person Routes
+Route::group(['middleware'=> 'web'],function(){
+  Route::resource('person_person','\App\Http\Controllers\Person_personController');
+  Route::post('person_person/{id}/update','\App\Http\Controllers\Person_personController@update');
+  Route::get('person_person/{id}/delete','\App\Http\Controllers\Person_personController@destroy');
+  Route::get('person_person/{id}/deleteMsg','\App\Http\Controllers\Person_personController@DeleteMsg');
+});
