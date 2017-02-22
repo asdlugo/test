@@ -29,12 +29,6 @@
                 </td>
                 <td>{!!$facility->description!!}</td>
             </tr>
-            <tr>
-                <td>
-                    <b><i>status : </i></b>
-                </td>
-                <td>{!!$facility->status!!}</td>
-            </tr>
         </tbody>
     </table>
 </section>

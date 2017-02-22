@@ -37,7 +37,7 @@ class ProblematicController extends Controller
     public function create()
     {
         $title = 'Create - problematic';
-        
+
         return view('problematic.create');
     }
 
@@ -51,17 +51,13 @@ class ProblematicController extends Controller
     {
         $problematic = new Problematic();
 
-        
+
         $problematic->name = $request->name;
 
-        
+
         $problematic->description = $request->description;
 
-        
-        $problematic->status = $request->status;
 
-        
-        
         $problematic->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +107,7 @@ class ProblematicController extends Controller
             return URL::to('problematic/'. $id . '/edit');
         }
 
-        
+
         $problematic = Problematic::findOrfail($id);
         return view('problematic.edit',compact('title','problematic'  ));
     }
@@ -126,14 +122,11 @@ class ProblematicController extends Controller
     public function update($id,Request $request)
     {
         $problematic = Problematic::findOrfail($id);
-    	
+
         $problematic->name = $request->name;
-        
+
         $problematic->description = $request->description;
-        
-        $problematic->status = $request->status;
-        
-        
+
         $problematic->save();
 
         return redirect('problematic');

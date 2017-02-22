@@ -29,12 +29,6 @@
                 </td>
                 <td>{!!$machinery->description!!}</td>
             </tr>
-            <tr>
-                <td>
-                    <b><i>status : </i></b>
-                </td>
-                <td>{!!$machinery->status!!}</td>
-            </tr>
         </tbody>
     </table>
 </section>

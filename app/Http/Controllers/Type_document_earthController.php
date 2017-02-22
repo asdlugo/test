@@ -37,7 +37,7 @@ class Type_document_earthController extends Controller
     public function create()
     {
         $title = 'Create - type_document_earth';
-        
+
         return view('type_document_earth.create');
     }
 
@@ -51,17 +51,13 @@ class Type_document_earthController extends Controller
     {
         $type_document_earth = new Type_document_earth();
 
-        
+
         $type_document_earth->name = $request->name;
 
-        
+
         $type_document_earth->description = $request->description;
 
-        
-        $type_document_earth->status = $request->status;
 
-        
-        
         $type_document_earth->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +107,7 @@ class Type_document_earthController extends Controller
             return URL::to('type_document_earth/'. $id . '/edit');
         }
 
-        
+
         $type_document_earth = Type_document_earth::findOrfail($id);
         return view('type_document_earth.edit',compact('title','type_document_earth'  ));
     }
@@ -126,14 +122,12 @@ class Type_document_earthController extends Controller
     public function update($id,Request $request)
     {
         $type_document_earth = Type_document_earth::findOrfail($id);
-    	
+
         $type_document_earth->name = $request->name;
-        
+
         $type_document_earth->description = $request->description;
-        
-        $type_document_earth->status = $request->status;
-        
-        
+
+
         $type_document_earth->save();
 
         return redirect('type_document_earth');

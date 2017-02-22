@@ -29,12 +29,6 @@
                 </td>
                 <td>{!!$water_source->description!!}</td>
             </tr>
-            <tr>
-                <td>
-                    <b><i>status : </i></b>
-                </td>
-                <td>{!!$water_source->status!!}</td>
-            </tr>
         </tbody>
     </table>
 </section>

@@ -15,22 +15,20 @@
         <thead>
             <th>name</th>
             <th>description</th>
-            <th>status</th>
             <th>actions</th>
         </thead>
         <tbody>
-            @foreach($production_destinies as $production_destiny) 
+            @foreach($production_destinies as $production_destiny)
             <tr>
                 <td>{!!$production_destiny->name!!}</td>
                 <td>{!!$production_destiny->description!!}</td>
-                <td>{!!$production_destiny->status!!}</td>
                 <td>
                     <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "/production_destiny/{!!$production_destiny->id!!}/deleteMsg" ><i class = 'material-icons'>delete</i></a>
                     <a href = '#' class = 'viewEdit btn btn-primary btn-xs' data-link = '/production_destiny/{!!$production_destiny->id!!}/edit'><i class = 'material-icons'>edit</i></a>
                     <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = '/production_destiny/{!!$production_destiny->id!!}'><i class = 'material-icons'>info</i></a>
                 </td>
             </tr>
-            @endforeach 
+            @endforeach
         </tbody>
     </table>
     {!! $production_destinies->render() !!}

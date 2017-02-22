@@ -37,7 +37,7 @@ class Social_networkController extends Controller
     public function create()
     {
         $title = 'Create - social_network';
-        
+
         return view('social_network.create');
     }
 
@@ -51,17 +51,13 @@ class Social_networkController extends Controller
     {
         $social_network = new Social_network();
 
-        
+
         $social_network->name = $request->name;
 
-        
+
         $social_network->description = $request->description;
 
-        
-        $social_network->status = $request->status;
 
-        
-        
         $social_network->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +107,7 @@ class Social_networkController extends Controller
             return URL::to('social_network/'. $id . '/edit');
         }
 
-        
+
         $social_network = Social_network::findOrfail($id);
         return view('social_network.edit',compact('title','social_network'  ));
     }
@@ -126,14 +122,12 @@ class Social_networkController extends Controller
     public function update($id,Request $request)
     {
         $social_network = Social_network::findOrfail($id);
-    	
+
         $social_network->name = $request->name;
-        
+
         $social_network->description = $request->description;
-        
-        $social_network->status = $request->status;
-        
-        
+
+
         $social_network->save();
 
         return redirect('social_network');

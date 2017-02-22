@@ -37,7 +37,7 @@ class FacilityController extends Controller
     public function create()
     {
         $title = 'Create - facility';
-        
+
         return view('facility.create');
     }
 
@@ -51,17 +51,14 @@ class FacilityController extends Controller
     {
         $facility = new Facility();
 
-        
+
         $facility->name = $request->name;
 
-        
+
         $facility->description = $request->description;
 
-        
-        $facility->status = $request->status;
 
-        
-        
+
         $facility->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +108,7 @@ class FacilityController extends Controller
             return URL::to('facility/'. $id . '/edit');
         }
 
-        
+
         $facility = Facility::findOrfail($id);
         return view('facility.edit',compact('title','facility'  ));
     }
@@ -126,14 +123,12 @@ class FacilityController extends Controller
     public function update($id,Request $request)
     {
         $facility = Facility::findOrfail($id);
-    	
+
         $facility->name = $request->name;
-        
+
         $facility->description = $request->description;
-        
-        $facility->status = $request->status;
-        
-        
+
+
         $facility->save();
 
         return redirect('facility');

@@ -138,12 +138,7 @@ Route::group(['middleware'=> 'web'],function(){
   Route::get('production_unit/{id}/deleteMsg','\App\Http\Controllers\Production_unitController@DeleteMsg');
 });
 
-//indigenous_person Routes
 Route::group(['middleware'=> 'web'],function(){
-  Route::resource('indigenous_person','\App\Http\Controllers\Indigenous_personController');
-  Route::post('indigenous_person/{id}/update','\App\Http\Controllers\Indigenous_personController@update');
-  Route::get('indigenous_person/{id}/delete','\App\Http\Controllers\Indigenous_personController@destroy');
-  Route::get('indigenous_person/{id}/deleteMsg','\App\Http\Controllers\Indigenous_personController@DeleteMsg');
 });
 
 //popular_organization Routes
@@ -162,10 +157,34 @@ Route::group(['middleware'=> 'web'],function(){
   Route::get('appointment/{id}/deleteMsg','\App\Http\Controllers\AppointmentController@DeleteMsg');
 });
 
-//person_person Routes
 Route::group(['middleware'=> 'web'],function(){
-  Route::resource('person_person','\App\Http\Controllers\Person_personController');
-  Route::post('person_person/{id}/update','\App\Http\Controllers\Person_personController@update');
-  Route::get('person_person/{id}/delete','\App\Http\Controllers\Person_personController@destroy');
-  Route::get('person_person/{id}/deleteMsg','\App\Http\Controllers\Person_personController@DeleteMsg');
+});
+
+Route::group(['middleware'=> 'web'],function(){
+});
+//person Routes
+Route::group(['middleware'=> 'web'],function(){
+  Route::resource('person','\App\Http\Controllers\PersonController');
+  Route::post('person/{id}/update','\App\Http\Controllers\PersonController@update');
+  Route::get('person/{id}/delete','\App\Http\Controllers\PersonController@destroy');
+  Route::get('person/{id}/deleteMsg','\App\Http\Controllers\PersonController@DeleteMsg');
+});
+
+//certification Routes
+Route::group(['middleware'=> 'web'],function(){
+  Route::resource('certification','\App\Http\Controllers\CertificationController');
+  Route::post('certification/{id}/update','\App\Http\Controllers\CertificationController@update');
+  Route::get('certification/{id}/delete','\App\Http\Controllers\CertificationController@destroy');
+  Route::get('certification/{id}/deleteMsg','\App\Http\Controllers\CertificationController@DeleteMsg');
+});
+
+//type_identy_card Routes
+Route::group(['middleware'=> 'web'],function(){
+  Route::resource('type_identy_card','\App\Http\Controllers\Type_identy_cardController');
+  Route::post('type_identy_card/{id}/update','\App\Http\Controllers\Type_identy_cardController@update');
+  Route::get('type_identy_card/{id}/delete','\App\Http\Controllers\Type_identy_cardController@destroy');
+  Route::get('type_identy_card/{id}/deleteMsg','\App\Http\Controllers\Type_identy_cardController@DeleteMsg');
+});
+
+Route::group(['middleware'=> 'web'],function(){
 });

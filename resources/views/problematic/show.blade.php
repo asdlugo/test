@@ -29,12 +29,6 @@
                 </td>
                 <td>{!!$problematic->description!!}</td>
             </tr>
-            <tr>
-                <td>
-                    <b><i>status : </i></b>
-                </td>
-                <td>{!!$problematic->status!!}</td>
-            </tr>
         </tbody>
     </table>
 </section>

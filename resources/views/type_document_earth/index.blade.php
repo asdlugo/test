@@ -15,22 +15,20 @@
         <thead>
             <th>name</th>
             <th>description</th>
-            <th>status</th>
             <th>actions</th>
         </thead>
         <tbody>
-            @foreach($type_document_earths as $type_document_earth) 
+            @foreach($type_document_earths as $type_document_earth)
             <tr>
                 <td>{!!$type_document_earth->name!!}</td>
                 <td>{!!$type_document_earth->description!!}</td>
-                <td>{!!$type_document_earth->status!!}</td>
                 <td>
                     <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "/type_document_earth/{!!$type_document_earth->id!!}/deleteMsg" ><i class = 'material-icons'>delete</i></a>
                     <a href = '#' class = 'viewEdit btn btn-primary btn-xs' data-link = '/type_document_earth/{!!$type_document_earth->id!!}/edit'><i class = 'material-icons'>edit</i></a>
                     <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = '/type_document_earth/{!!$type_document_earth->id!!}'><i class = 'material-icons'>info</i></a>
                 </td>
             </tr>
-            @endforeach 
+            @endforeach
         </tbody>
     </table>
     {!! $type_document_earths->render() !!}

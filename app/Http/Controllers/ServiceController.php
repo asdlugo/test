@@ -37,7 +37,7 @@ class ServiceController extends Controller
     public function create()
     {
         $title = 'Create - service';
-        
+
         return view('service.create');
     }
 
@@ -51,17 +51,13 @@ class ServiceController extends Controller
     {
         $service = new Service();
 
-        
+
         $service->name = $request->name;
 
-        
+
         $service->description = $request->description;
 
-        
-        $service->status = $request->status;
 
-        
-        
         $service->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +107,7 @@ class ServiceController extends Controller
             return URL::to('service/'. $id . '/edit');
         }
 
-        
+
         $service = Service::findOrfail($id);
         return view('service.edit',compact('title','service'  ));
     }
@@ -126,14 +122,13 @@ class ServiceController extends Controller
     public function update($id,Request $request)
     {
         $service = Service::findOrfail($id);
-    	
+
         $service->name = $request->name;
-        
+
         $service->description = $request->description;
-        
-        $service->status = $request->status;
-        
-        
+
+
+
         $service->save();
 
         return redirect('service');

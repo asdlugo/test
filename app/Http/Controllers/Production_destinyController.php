@@ -37,7 +37,7 @@ class Production_destinyController extends Controller
     public function create()
     {
         $title = 'Create - production_destiny';
-        
+
         return view('production_destiny.create');
     }
 
@@ -51,17 +51,14 @@ class Production_destinyController extends Controller
     {
         $production_destiny = new Production_destiny();
 
-        
+
         $production_destiny->name = $request->name;
 
-        
+
         $production_destiny->description = $request->description;
 
-        
-        $production_destiny->status = $request->status;
 
-        
-        
+
         $production_destiny->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +108,7 @@ class Production_destinyController extends Controller
             return URL::to('production_destiny/'. $id . '/edit');
         }
 
-        
+
         $production_destiny = Production_destiny::findOrfail($id);
         return view('production_destiny.edit',compact('title','production_destiny'  ));
     }
@@ -126,14 +123,12 @@ class Production_destinyController extends Controller
     public function update($id,Request $request)
     {
         $production_destiny = Production_destiny::findOrfail($id);
-    	
+
         $production_destiny->name = $request->name;
-        
+
         $production_destiny->description = $request->description;
-        
-        $production_destiny->status = $request->status;
-        
-        
+
+
         $production_destiny->save();
 
         return redirect('production_destiny');

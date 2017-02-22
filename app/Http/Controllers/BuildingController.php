@@ -37,7 +37,7 @@ class BuildingController extends Controller
     public function create()
     {
         $title = 'Create - building';
-        
+
         return view('building.create');
     }
 
@@ -51,17 +51,14 @@ class BuildingController extends Controller
     {
         $building = new Building();
 
-        
+
         $building->name = $request->name;
 
-        
+
         $building->description = $request->description;
 
-        
-        $building->status = $request->status;
 
-        
-        
+
         $building->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +108,7 @@ class BuildingController extends Controller
             return URL::to('building/'. $id . '/edit');
         }
 
-        
+
         $building = Building::findOrfail($id);
         return view('building.edit',compact('title','building'  ));
     }
@@ -126,14 +123,12 @@ class BuildingController extends Controller
     public function update($id,Request $request)
     {
         $building = Building::findOrfail($id);
-    	
+
         $building->name = $request->name;
-        
+
         $building->description = $request->description;
-        
-        $building->status = $request->status;
-        
-        
+
+
         $building->save();
 
         return redirect('building');

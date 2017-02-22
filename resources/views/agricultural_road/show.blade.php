@@ -29,12 +29,6 @@
                 </td>
                 <td>{!!$agricultural_road->description!!}</td>
             </tr>
-            <tr>
-                <td>
-                    <b><i>status : </i></b>
-                </td>
-                <td>{!!$agricultural_road->status!!}</td>
-            </tr>
         </tbody>
     </table>
 </section>

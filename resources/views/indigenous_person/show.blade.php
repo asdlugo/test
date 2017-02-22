@@ -29,12 +29,6 @@
                 </td>
                 <td>{!!$indigenous_person->description!!}</td>
             </tr>
-            <tr>
-                <td>
-                    <b><i>status : </i></b>
-                </td>
-                <td>{!!$indigenous_person->status!!}</td>
-            </tr>
         </tbody>
     </table>
 </section>

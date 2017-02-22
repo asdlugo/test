@@ -29,12 +29,7 @@
                 </td>
                 <td>{!!$production_destiny->description!!}</td>
             </tr>
-            <tr>
-                <td>
-                    <b><i>status : </i></b>
-                </td>
-                <td>{!!$production_destiny->status!!}</td>
-            </tr>
+
         </tbody>
     </table>
 </section>

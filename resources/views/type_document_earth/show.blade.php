@@ -29,12 +29,6 @@
                 </td>
                 <td>{!!$type_document_earth->description!!}</td>
             </tr>
-            <tr>
-                <td>
-                    <b><i>status : </i></b>
-                </td>
-                <td>{!!$type_document_earth->status!!}</td>
-            </tr>
         </tbody>
     </table>
 </section>

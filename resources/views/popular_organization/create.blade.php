@@ -24,10 +24,6 @@
             <label for="rif">rif</label>
             <input id="rif" name = "rif" type="text" class="form-control">
         </div>
-        <div class="form-group">
-            <label for="status">status</label>
-            <input id="status" name = "status" type="text" class="form-control">
-        </div>
         <button class = 'btn btn-primary' type ='submit'>Create</button>
     </form>
 </section>

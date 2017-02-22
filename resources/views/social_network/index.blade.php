@@ -15,22 +15,20 @@
         <thead>
             <th>name</th>
             <th>description</th>
-            <th>status</th>
             <th>actions</th>
         </thead>
         <tbody>
-            @foreach($social_networks as $social_network) 
+            @foreach($social_networks as $social_network)
             <tr>
                 <td>{!!$social_network->name!!}</td>
                 <td>{!!$social_network->description!!}</td>
-                <td>{!!$social_network->status!!}</td>
                 <td>
                     <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "/social_network/{!!$social_network->id!!}/deleteMsg" ><i class = 'material-icons'>delete</i></a>
                     <a href = '#' class = 'viewEdit btn btn-primary btn-xs' data-link = '/social_network/{!!$social_network->id!!}/edit'><i class = 'material-icons'>edit</i></a>
                     <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = '/social_network/{!!$social_network->id!!}'><i class = 'material-icons'>info</i></a>
                 </td>
             </tr>
-            @endforeach 
+            @endforeach
         </tbody>
     </table>
     {!! $social_networks->render() !!}

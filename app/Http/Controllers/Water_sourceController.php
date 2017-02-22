@@ -37,7 +37,7 @@ class Water_sourceController extends Controller
     public function create()
     {
         $title = 'Create - water_source';
-        
+
         return view('water_source.create');
     }
 
@@ -51,17 +51,14 @@ class Water_sourceController extends Controller
     {
         $water_source = new Water_source();
 
-        
+
         $water_source->name = $request->name;
 
-        
+
         $water_source->description = $request->description;
 
-        
-        $water_source->status = $request->status;
 
-        
-        
+
         $water_source->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +108,7 @@ class Water_sourceController extends Controller
             return URL::to('water_source/'. $id . '/edit');
         }
 
-        
+
         $water_source = Water_source::findOrfail($id);
         return view('water_source.edit',compact('title','water_source'  ));
     }
@@ -126,14 +123,11 @@ class Water_sourceController extends Controller
     public function update($id,Request $request)
     {
         $water_source = Water_source::findOrfail($id);
-    	
+
         $water_source->name = $request->name;
-        
+
         $water_source->description = $request->description;
-        
-        $water_source->status = $request->status;
-        
-        
+
         $water_source->save();
 
         return redirect('water_source');

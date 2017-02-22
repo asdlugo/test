@@ -11,22 +11,17 @@
     </form>
     <br>
     <form method = 'POST' action = '{!! url("type_document_earth")!!}/{!!$type_document_earth->
-        id!!}/update'> 
+        id!!}/update'>
         <input type = 'hidden' name = '_token' value = '{{Session::token()}}'>
         <div class="form-group">
             <label for="name">name</label>
             <input id="name" name = "name" type="text" class="form-control" value="{!!$type_document_earth->
-            name!!}"> 
+            name!!}">
         </div>
         <div class="form-group">
             <label for="description">description</label>
             <input id="description" name = "description" type="text" class="form-control" value="{!!$type_document_earth->
-            description!!}"> 
-        </div>
-        <div class="form-group">
-            <label for="status">status</label>
-            <input id="status" name = "status" type="text" class="form-control" value="{!!$type_document_earth->
-            status!!}"> 
+            description!!}">
         </div>
         <button class = 'btn btn-primary' type ='submit'>Update</button>
     </form>

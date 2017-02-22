@@ -37,7 +37,7 @@ class Agricultural_roadController extends Controller
     public function create()
     {
         $title = 'Create - agricultural_road';
-        
+
         return view('agricultural_road.create');
     }
 
@@ -51,17 +51,14 @@ class Agricultural_roadController extends Controller
     {
         $agricultural_road = new Agricultural_road();
 
-        
+
         $agricultural_road->name = $request->name;
 
-        
+
         $agricultural_road->description = $request->description;
 
-        
-        $agricultural_road->status = $request->status;
 
-        
-        
+
         $agricultural_road->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +108,7 @@ class Agricultural_roadController extends Controller
             return URL::to('agricultural_road/'. $id . '/edit');
         }
 
-        
+
         $agricultural_road = Agricultural_road::findOrfail($id);
         return view('agricultural_road.edit',compact('title','agricultural_road'  ));
     }
@@ -126,14 +123,11 @@ class Agricultural_roadController extends Controller
     public function update($id,Request $request)
     {
         $agricultural_road = Agricultural_road::findOrfail($id);
-    	
+
         $agricultural_road->name = $request->name;
-        
+
         $agricultural_road->description = $request->description;
-        
-        $agricultural_road->status = $request->status;
-        
-        
+
         $agricultural_road->save();
 
         return redirect('agricultural_road');

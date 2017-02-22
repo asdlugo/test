@@ -29,12 +29,6 @@
                 </td>
                 <td>{!!$service->description!!}</td>
             </tr>
-            <tr>
-                <td>
-                    <b><i>status : </i></b>
-                </td>
-                <td>{!!$service->status!!}</td>
-            </tr>
         </tbody>
     </table>
 </section>

@@ -20,10 +20,6 @@
             <label for="description">description</label>
             <input id="description" name = "description" type="text" class="form-control">
         </div>
-        <div class="form-group">
-            <label for="status">status</label>
-            <input id="status" name = "status" type="text" class="form-control">
-        </div>
         <button class = 'btn btn-primary' type ='submit'>Create</button>
     </form>
 </section>

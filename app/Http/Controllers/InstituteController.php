@@ -37,7 +37,7 @@ class InstituteController extends Controller
     public function create()
     {
         $title = 'Create - institute';
-        
+
         return view('institute.create');
     }
 
@@ -51,17 +51,13 @@ class InstituteController extends Controller
     {
         $institute = new Institute();
 
-        
+
         $institute->name = $request->name;
 
-        
+
         $institute->description = $request->description;
 
-        
-        $institute->status = $request->status;
 
-        
-        
         $institute->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +107,7 @@ class InstituteController extends Controller
             return URL::to('institute/'. $id . '/edit');
         }
 
-        
+
         $institute = Institute::findOrfail($id);
         return view('institute.edit',compact('title','institute'  ));
     }
@@ -126,14 +122,12 @@ class InstituteController extends Controller
     public function update($id,Request $request)
     {
         $institute = Institute::findOrfail($id);
-    	
+
         $institute->name = $request->name;
-        
+
         $institute->description = $request->description;
-        
-        $institute->status = $request->status;
-        
-        
+
+
         $institute->save();
 
         return redirect('institute');

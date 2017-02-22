@@ -16,23 +16,21 @@
             <th>name</th>
             <th>description</th>
             <th>rif</th>
-            <th>status</th>
             <th>actions</th>
         </thead>
         <tbody>
-            @foreach($popular_organizations as $popular_organization) 
+            @foreach($popular_organizations as $popular_organization)
             <tr>
                 <td>{!!$popular_organization->name!!}</td>
                 <td>{!!$popular_organization->description!!}</td>
                 <td>{!!$popular_organization->rif!!}</td>
-                <td>{!!$popular_organization->status!!}</td>
                 <td>
                     <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "/popular_organization/{!!$popular_organization->id!!}/deleteMsg" ><i class = 'material-icons'>delete</i></a>
                     <a href = '#' class = 'viewEdit btn btn-primary btn-xs' data-link = '/popular_organization/{!!$popular_organization->id!!}/edit'><i class = 'material-icons'>edit</i></a>
                     <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = '/popular_organization/{!!$popular_organization->id!!}'><i class = 'material-icons'>info</i></a>
                 </td>
             </tr>
-            @endforeach 
+            @endforeach
         </tbody>
     </table>
     {!! $popular_organizations->render() !!}

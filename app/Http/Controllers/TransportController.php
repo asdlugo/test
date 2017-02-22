@@ -37,7 +37,7 @@ class TransportController extends Controller
     public function create()
     {
         $title = 'Create - transport';
-        
+
         return view('transport.create');
     }
 
@@ -51,17 +51,13 @@ class TransportController extends Controller
     {
         $transport = new Transport();
 
-        
+
         $transport->name = $request->name;
 
-        
+
         $transport->description = $request->description;
 
-        
-        $transport->status = $request->status;
 
-        
-        
         $transport->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +107,7 @@ class TransportController extends Controller
             return URL::to('transport/'. $id . '/edit');
         }
 
-        
+
         $transport = Transport::findOrfail($id);
         return view('transport.edit',compact('title','transport'  ));
     }
@@ -126,14 +122,12 @@ class TransportController extends Controller
     public function update($id,Request $request)
     {
         $transport = Transport::findOrfail($id);
-    	
+
         $transport->name = $request->name;
-        
+
         $transport->description = $request->description;
-        
-        $transport->status = $request->status;
-        
-        
+
+
         $transport->save();
 
         return redirect('transport');

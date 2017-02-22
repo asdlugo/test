@@ -37,7 +37,7 @@ class MachineryController extends Controller
     public function create()
     {
         $title = 'Create - machinery';
-        
+
         return view('machinery.create');
     }
 
@@ -51,17 +51,13 @@ class MachineryController extends Controller
     {
         $machinery = new Machinery();
 
-        
+
         $machinery->name = $request->name;
 
-        
+
         $machinery->description = $request->description;
 
-        
-        $machinery->status = $request->status;
 
-        
-        
         $machinery->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +107,7 @@ class MachineryController extends Controller
             return URL::to('machinery/'. $id . '/edit');
         }
 
-        
+
         $machinery = Machinery::findOrfail($id);
         return view('machinery.edit',compact('title','machinery'  ));
     }
@@ -126,14 +122,12 @@ class MachineryController extends Controller
     public function update($id,Request $request)
     {
         $machinery = Machinery::findOrfail($id);
-    	
+
         $machinery->name = $request->name;
-        
+
         $machinery->description = $request->description;
-        
-        $machinery->status = $request->status;
-        
-        
+
+
         $machinery->save();
 
         return redirect('machinery');

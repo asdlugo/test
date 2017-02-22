@@ -37,7 +37,7 @@ class Indigenous_personController extends Controller
     public function create()
     {
         $title = 'Create - indigenous_person';
-        
+
         return view('indigenous_person.create');
     }
 
@@ -51,17 +51,13 @@ class Indigenous_personController extends Controller
     {
         $indigenous_person = new Indigenous_person();
 
-        
+
         $indigenous_person->name = $request->name;
 
-        
+
         $indigenous_person->description = $request->description;
 
-        
-        $indigenous_person->status = $request->status;
 
-        
-        
         $indigenous_person->save();
 
         $pusher = App::make('pusher');
@@ -111,7 +107,7 @@ class Indigenous_personController extends Controller
             return URL::to('indigenous_person/'. $id . '/edit');
         }
 
-        
+
         $indigenous_person = Indigenous_person::findOrfail($id);
         return view('indigenous_person.edit',compact('title','indigenous_person'  ));
     }
@@ -126,14 +122,12 @@ class Indigenous_personController extends Controller
     public function update($id,Request $request)
     {
         $indigenous_person = Indigenous_person::findOrfail($id);
-    	
+
         $indigenous_person->name = $request->name;
-        
+
         $indigenous_person->description = $request->description;
-        
-        $indigenous_person->status = $request->status;
-        
-        
+
+
         $indigenous_person->save();
 
         return redirect('indigenous_person');

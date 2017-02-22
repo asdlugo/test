@@ -37,7 +37,7 @@ class Popular_organizationController extends Controller
     public function create()
     {
         $title = 'Create - popular_organization';
-        
+
         return view('popular_organization.create');
     }
 
@@ -51,20 +51,16 @@ class Popular_organizationController extends Controller
     {
         $popular_organization = new Popular_organization();
 
-        
+
         $popular_organization->name = $request->name;
 
-        
+
         $popular_organization->description = $request->description;
 
-        
+
         $popular_organization->rif = $request->rif;
 
-        
-        $popular_organization->status = $request->status;
 
-        
-        
         $popular_organization->save();
 
         $pusher = App::make('pusher');
@@ -114,7 +110,7 @@ class Popular_organizationController extends Controller
             return URL::to('popular_organization/'. $id . '/edit');
         }
 
-        
+
         $popular_organization = Popular_organization::findOrfail($id);
         return view('popular_organization.edit',compact('title','popular_organization'  ));
     }
@@ -129,16 +125,13 @@ class Popular_organizationController extends Controller
     public function update($id,Request $request)
     {
         $popular_organization = Popular_organization::findOrfail($id);
-    	
+
         $popular_organization->name = $request->name;
-        
+
         $popular_organization->description = $request->description;
-        
+
         $popular_organization->rif = $request->rif;
-        
-        $popular_organization->status = $request->status;
-        
-        
+
         $popular_organization->save();
 
         return redirect('popular_organization');

@@ -29,12 +29,6 @@
                 </td>
                 <td>{!!$social_network->description!!}</td>
             </tr>
-            <tr>
-                <td>
-                    <b><i>status : </i></b>
-                </td>
-                <td>{!!$social_network->status!!}</td>
-            </tr>
         </tbody>
     </table>
 </section>

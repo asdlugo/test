@@ -15,22 +15,20 @@
         <thead>
             <th>name</th>
             <th>description</th>
-            <th>status</th>
             <th>actions</th>
         </thead>
         <tbody>
-            @foreach($buildings as $building) 
+            @foreach($buildings as $building)
             <tr>
                 <td>{!!$building->name!!}</td>
                 <td>{!!$building->description!!}</td>
-                <td>{!!$building->status!!}</td>
                 <td>
                     <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "/building/{!!$building->id!!}/deleteMsg" ><i class = 'material-icons'>delete</i></a>
                     <a href = '#' class = 'viewEdit btn btn-primary btn-xs' data-link = '/building/{!!$building->id!!}/edit'><i class = 'material-icons'>edit</i></a>
                     <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = '/building/{!!$building->id!!}'><i class = 'material-icons'>info</i></a>
                 </td>
             </tr>
-            @endforeach 
+            @endforeach
         </tbody>
     </table>
     {!! $buildings->render() !!}
